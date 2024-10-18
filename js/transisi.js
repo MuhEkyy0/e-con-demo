@@ -119,80 +119,199 @@ var PageTransitions = (function () {
             case 3:
                 outClass = 'halaman-rotateFoldLeft';
                 inClass = 'halaman-moveFromRightFade';
-                var textWrapper = document.querySelector('.ml11 .letters');
-                textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+                // var textWrapper = document.querySelector('.ml11 .letters');
+                // textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+                var ml11 = {};
+                ml11.opacityIn = [0, 1];
+                ml11.scaleIn = [0.2, 1];
+                ml11.scaleOut = 3;
+                ml11.durationIn = 800;
+                ml11.durationOut = 500;
+                ml11.delay = 1300;
 
                 anime.timeline({
                         loop: false
                     })
+                    // .add({
+                    //     targets: '.ml11 .line',
+                    //     scaleY: [0, 1],
+                    //     opacity: [0.5, 1],
+                    //     easing: "easeOutExpo",
+                    //     duration: 700
+                    // })
+                    // .add({
+                    //     targets: '.ml11 .line',
+                    //     translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+                    //     easing: "easeOutExpo",
+                    //     duration: 700,
+                    //     delay: 800
+                    // }).add({
+                    //     targets: '.ml11 .letter',
+                    //     opacity: [0, 1],
+                    //     easing: "easeOutExpo",
+                    //     duration: 600,
+                    //     offset: '-=775',
+                    //     delay: (el, i) => 34 * (i + 1)
+                    // }).add({
+                    //     targets: '.ml11',
+                    //     opacity: 1,
+                    //     duration: 1000,
+                    //     easing: "easeOutExpo",
+                    //     delay: 1000
+                    // });
+
                     .add({
-                        targets: '.ml11 .line',
-                        scaleY: [0, 1],
-                        opacity: [0.5, 1],
-                        easing: "easeOutExpo",
-                        duration: 1000
-                    })
-                    .add({
-                        targets: '.ml11 .line',
-                        translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
-                        easing: "easeOutExpo",
-                        duration: 1000,
-                        delay: 1200
+                        targets: '.ml11 .letters-1',
+                        opacity: ml11.opacityIn,
+                        scale: ml11.scaleIn,
+                        duration: ml11.durationIn                        
                     }).add({
-                        targets: '.ml11 .letter',
-                        opacity: [0, 1],
-                        easing: "easeOutExpo",
-                        duration: 600,
-                        offset: '-=775',
-                        delay: (el, i) => 34 * (i + 1)
+                        targets: '.ml11 .letters-1',
+                        opacity: 0,
+                        scale: ml11.scaleOut,
+                        duration: ml11.durationOut,
+                        easing: "easeInExpo",
+                        delay: ml11.delay
+                    }).add({
+                        targets: '.ml11 .letters-2',
+                        opacity: ml11.opacityIn,
+                        scale: ml11.scaleIn,
+                        duration: ml11.durationIn
+                    }).add({
+                        targets: '.ml11 .letters-2',
+                        opacity: 0,
+                        scale: ml11.scaleOut,
+                        duration: ml11.durationOut,
+                        easing: "easeInExpo",
+                        delay: ml11.delay
                     }).add({
                         targets: '.ml11',
                         opacity: 1,
-                        duration: 1000,
-                        easing: "easeOutExpo",
-                        delay: 1000
+                        duration: 800,
+                        // easing: "easeOutExpo",
+                        delay: 500
                     });
                 break;
             case 4:
                 outClass = 'halaman-rotateFoldBottom';
                 inClass = 'halaman-moveFromTopFade';
-                var textWrapper = document.querySelector('.ml9 .letters');
-                textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                // var textWrapper = document.querySelector('.ml9 .letters');
+                // textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                var ml9 = {};
+                ml9.opacityIn = [0, 1];
+                ml9.scaleIn = [0.2, 1];
+                ml9.scaleOut = 3;
+                ml9.durationIn = 800;
+                ml9.durationOut = 500;
+                ml9.delay = 1300;
 
                 anime.timeline({
                         loop: false
                     })
                     .add({
-                        targets: '.ml9 .letter',
-                        scale: [0, 1],
-                        duration: 1500,
-                        elasticity: 800,
-                        delay: (el, i) => 70 * (i + 1)
+                        targets: '.ml9 .letters-1',
+                        opacity: ml9.opacityIn,
+                        scale: ml9.scaleIn,
+                        duration: ml9.durationIn                        
+                    }).add({
+                        targets: '.ml9 .letters-1',
+                        opacity: 0,
+                        scale: ml9.scaleOut,
+                        duration: ml9.durationOut,
+                        easing: "easeOutExpo",
+                        delay: ml9.delay
+                    }).add({
+                        targets: '.ml9 .letters-2',
+                        opacity: ml9.opacityIn,
+                        scale: ml9.scaleIn,
+                        duration: ml9.durationIn
+                    }).add({
+                        targets: '.ml9 .letters-2',
+                        opacity: 0,
+                        scale: ml9.scaleOut,
+                        duration: ml9.durationOut,
+                        easing: "easeOutExpo",
+                        delay: ml9.delay
                     }).add({
                         targets: '.ml9',
                         opacity: 1,
-                        duration: 1000,
-                        easing: "easeOutExpo",
-                        delay: 1400
+                        duration: 500,
+                        // easing: "easeOutExpo",
+                        delay: 300
                     });
                 break;
             case 5:
                 outClass = 'halaman-rotateRoomLeftOut halaman-ontop';
                 inClass = 'halaman-rotateRoomLeftIn';
-                var textWrapper = document.querySelector('.ml2');
-                textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                // var textWrapper = document.querySelector('.ml2');
+                // textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+                // anime.timeline({
+                //         loop: false
+                //     })
+                //     .add({
+                //         targets: '.ml2 .letter',
+                //         scale: [4, 1],
+                //         opacity: [0, 1],
+                //         translateZ: 0,
+                //         easing: "easeOutExpo",
+                //         duration: 500,
+                //         delay: (el, i) => 20 * i
+                //     }) ;
+
+                var ml2 = {};
+                ml2.opacityIn = [0, 1];
+                ml2.scaleIn = [0.2, 1];
+                ml2.scaleOut = 2;
+                ml2.durationIn = 700;
+                ml2.durationOut = 500;
+                ml2.delay = 1300;
 
                 anime.timeline({
                         loop: false
                     })
                     .add({
-                        targets: '.ml2 .letter',
-                        scale: [4, 1],
-                        opacity: [0, 1],
-                        translateZ: 0,
-                        easing: "easeOutExpo",
-                        duration: 1200,
-                        delay: (el, i) => 70 * i
+                        targets: '.ml2 .letters-1',
+                        opacity: ml2.opacityIn,
+                        scale: ml2.scaleIn,
+                        duration: ml2.durationIn
+                    }).add({
+                        targets: '.ml2 .letters-1',
+                        opacity: 0,
+                        scale: ml2.scaleOut,
+                        duration: ml2.durationOut,
+                        easing: "easeInExpo",
+                        delay: ml2.delay
+                    }).add({
+                        targets: '.ml2 .letters-2',
+                        opacity: ml2.opacityIn,
+                        scale: ml2.scaleIn,
+                        duration: ml2.durationIn
+                    }).add({
+                        targets: '.ml2 .letters-2',
+                        opacity: 0,
+                        scale: ml2.scaleOut,
+                        duration: ml2.durationOut,
+                        easing: "easeInExpo",
+                        delay: ml2.delay
+                    // }).add({
+                    //     targets: '.ml2 .letters-3',
+                    //     opacity: ml2.opacityIn,
+                    //     scale: ml2.scaleIn,
+                    //     duration: ml2.durationIn
+                    // }).add({
+                    //     targets: '.ml2 .letters-3',
+                    //     opacity: 0,
+                    //     scale: ml2.scaleOut,
+                    //     duration: ml2.durationOut,
+                    //     easing: "easeInExpo",
+                    //     delay: ml2.delay
+                    }).add({
+                        targets: '.ml2',
+                        opacity: 1,
+                        duration: 500,
+                        delay: 500
                     });
                 break;
             case 6:
@@ -202,9 +321,11 @@ var PageTransitions = (function () {
                 ml4.opacityIn = [0, 1];
                 ml4.scaleIn = [0.2, 1];
                 ml4.scaleOut = 3;
-                ml4.durationIn = 700;
+                ml4.durationIn = 800;
                 ml4.durationOut = 500;
-                ml4.delay = 1100;
+                ml4.delay = 300;
+
+                var totDelay = (ml4.durationIn + ml4.durationOut + ml4.delay) * 5;
 
                 anime.timeline({
                         loop: false
@@ -246,11 +367,24 @@ var PageTransitions = (function () {
                         easing: "easeInExpo",
                         delay: ml4.delay
                     }).add({
+                        targets: '.ml4 .letters-4',
+                        opacity: ml4.opacityIn,
+                        scale: ml4.scaleIn,
+                        duration: ml4.durationIn
+                    }).add({
+                        targets: '.ml4 .letters-4',
+                        opacity: 0,
+                        scale: ml4.scaleOut,
+                        duration: ml4.durationOut,
+                        easing: "easeInExpo",
+                        delay: ml4.delay
+                    }).add({
                         targets: '.ml4',
                         opacity: 1,
-                        duration: 500,
+                        duration: 800,
                         delay: 500
                     });
+
                 break;
             case 7:
                 outClass = 'halaman-rotateRoomRightOut halaman-ontop';
@@ -336,6 +470,7 @@ var PageTransitions = (function () {
                         delay: 1000
                     });
                 break;
+
             case 10:
                 outClass = 'halaman-rotateCarouselTopOut halaman-ontop';
                 inClass = 'halaman-rotateCarouselTopIn';
@@ -358,6 +493,8 @@ var PageTransitions = (function () {
                     });
 
                 break;
+
+            
 
         }
 

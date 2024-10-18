@@ -90,7 +90,7 @@ body {
 
 .ml11 {
     font-weight: 700;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .ml11 .text-wrapper {
@@ -126,27 +126,51 @@ body {
     font-size: 2em;
 }
 
-.ml9 .text-wrapper {
+/* .ml9 .text-wrapper {
     position: relative;
     display: inline-block;
     padding-top: 0.2em;
     padding-right: 0.05em;
     padding-bottom: 0.1em;
     overflow: hidden;
-}
+} */
 
-.ml9 .letter {
+/* .ml9 .letter {
     transform-origin: 50% 100%;
     display: inline-block;
+} */
+
+.ml9 .letters {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0.3em;
+    right: 0;
+    opacity: 0;
 }
 
-.ml2 {
+/* .ml2 {
     font-weight: 900;
     font-size: 2em;
 }
 
 .ml2 .letter {
     display: inline-block;
+} */
+
+.ml2 {
+    position: relative;
+    font-weight: 900;
+    font-size: 2em;
+}
+
+.ml2 .letters {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0.3em;
+    right: 0;
+    opacity: 0;
 }
 
 .ml4 {
@@ -177,7 +201,7 @@ body {
 
 .ml14 {
     font-weight: bold;
-    font-size: 1.6em;
+    font-size: 1.5em;
 }
 
 .ml14 .text-wrapper {
@@ -203,10 +227,21 @@ body {
     display: inline-block;
 }
 
+.ml15 {
+    font-weight: 200;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.ml15 .letter {
+    display: inline-block;
+}
+
 .ml7 {
     position: relative;
     font-weight: 900;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .ml7 .text-wrapper {
@@ -232,6 +267,7 @@ body {
 .ml13 .letter {
     display: inline-block;
 }
+
 
 #gambar {
     margin-bottom: 10px;
