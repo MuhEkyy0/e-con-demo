@@ -532,6 +532,7 @@ var PageTransitions = (function () {
         $inpage.attr('class', $inpage.data('originalClassList') + ' halaman-saatini');
     }
 
+
     init();
 
     return {
