@@ -183,7 +183,46 @@ right:0;
 	user-select: none;
 }
 
+.tombolLove {
+	background: #f5f5f5;
+	color: #303030;
+	border: 2px solid #303030;
+	padding: 10px 55px 10px 55px;
+	font-size: 18px;
+	border-radius: 8px;
+	font-weight: bold;
+	height: 50px;
+	letter-spacing: 1px;
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	text-decoration: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
 
+.tombolLove:hover {
+	cursor: pointer;
+	background: #303030;
+	color: #f5f5f5;
+	border: 2px solid #f5f5f5;
+	padding: 10px 55px 10px 55px;
+	font-size: 15px;
+	border-radius: 8px;
+	font-weight: bold;
+	height: 50px;
+	letter-spacing: 1px;
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	text-decoration: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
 
 
 

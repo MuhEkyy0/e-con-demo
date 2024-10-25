@@ -29,13 +29,39 @@
             font-size: 3em; /* Adjust text size */
             opacity: 0; /* Start invisible */
             transition: opacity 1s ease-in-out; /* Fade-in effect */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        #questionText {
+            font-size: 2em;
+            opacity: 0;
+            animation: fadeIn 3s ease-in-out 5s forwards; /* Fade in after 5 seconds */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
+    <audio id="audio" src="audio/audio.mp3"></audio>
     <canvas id="pinkboard"></canvas>
+    <div id="loveText">Are we a couple now?</div>
 
     <script>
+        window.onload = function () {
+            var audio = document.getElementById("audio");
+            audio.play();
+        };
         var settings = {
             particles: {
                 length: 200,
@@ -278,11 +304,13 @@
             canvas.height = canvas.clientHeight;
         }
         window.onresize = onResize;
-
+        document.getElementById("loveText").style.opacity = 1;
         setTimeout(function () {
-            onResize();
-            render();
-        }, 10);
+            
+        }, 3000);
+
+        onResize();
+        render();
         })(document.getElementById("pinkboard"));
             
     </script>
